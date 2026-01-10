@@ -1,0 +1,85 @@
+import React from 'react'
+
+const BlogDetais =async ({params}) => {
+     const {id} = await params;
+     //
+      const data =[
+    
+  {
+    "id": "ramadan-001",
+    "title": "রমাদান: আত্মশুদ্ধি ও তাকওয়ার মাস",
+    "heading": "রমাদান কেন আত্মশুদ্ধির সেরা সময়?",
+    "author": "Sadat Hassan Labib",
+    "published_date": "2026-03-01",
+    "photo_url": "https://example.com/images/ramadan-spirituality.jpg",
+    "category": "Ramadan & Spirituality",
+    "how_many_time_to_read": "4 minutes",
+    "content": "রমাদান হলো আত্মশুদ্ধি ও তাকওয়া অর্জনের শ্রেষ্ঠ সময়। এই মাসে একজন মুমিন কেবল খাবার ও পানীয় থেকে বিরত থাকে না, বরং মিথ্যা, গিবত, হিংসা ও অহংকার থেকেও নিজেকে দূরে রাখার চেষ্টা করে। রোজা মানুষের আত্মাকে সংযত করে এবং আল্লাহভীতিকে জাগ্রত করে। দিনের ক্ষুধা ও তৃষ্ণা আমাদের দরিদ্র মানুষের কষ্ট অনুভব করতে শেখায়। রমাদান আমাদের ভেতরের নফসকে নিয়ন্ত্রণ করার প্রশিক্ষণ দেয়, যাতে এই মাস শেষে আমরা আরও উন্নত চরিত্রের মানুষ হতে পারি।"
+  },
+  {
+    "id": "ramadan-002",
+    "title": "রোজা শুধু উপবাস নয়",
+    "heading": "রোজার প্রকৃত উদ্দেশ্য কী?",
+    "author": "Sadat Hassan Labib",
+    "published_date": "2026-03-03",
+    "photo_url": "https://example.com/images/fasting-purpose.jpg",
+    "category": "Ramadan & Ibadah",
+    "how_many_time_to_read": "5 minutes",
+    "content": "অনেকে রোজাকে শুধু না খেয়ে থাকার মধ্যেই সীমাবদ্ধ মনে করে, কিন্তু ইসলামে রোজার উদ্দেশ্য আরও গভীর। রোজা মানুষকে ধৈর্যশীল করে এবং নিজের ওপর নিয়ন্ত্রণ শেখায়। চোখ, কান, জিহ্বা ও অন্তর—সবকিছুর সংযমই প্রকৃত রোজা। রমাদানে একজন মুসলমান তার ইবাদত বাড়ায়, কুরআনের সাথে সম্পর্ক দৃঢ় করে এবং দোয়ার মাধ্যমে আল্লাহর নিকটবর্তী হয়। এই আত্মসংযমের শিক্ষা যেন রমাদান শেষের পরও আমাদের জীবনে বজায় থাকে—এটাই রোজার মূল শিক্ষা।"
+  },
+  {
+    "id": "ramadan-003",
+    "title": "রমাদানে সময় ব্যবস্থাপনা",
+    "heading": "কিভাবে রমাদানে দিনকে বরকতময় করা যায়",
+    "author": "Sadat Hassan Labib",
+    "published_date": "2026-03-06",
+    "photo_url": "https://example.com/images/ramadan-time-management.jpg",
+    "category": "Ramadan Lifestyle",
+    "how_many_time_to_read": "6 minutes",
+    "content": "রমাদান আমাদের শেখায় কীভাবে সময়কে সঠিকভাবে ব্যবহার করতে হয়। সেহরি, নামাজ, কাজকর্ম ও বিশ্রামের মধ্যে একটি ভারসাম্য তৈরি করা জরুরি। ফজরের পর কিছু সময় কুরআন তিলাওয়াত করলে দিনটি বরকতময় হয়। অপ্রয়োজনীয় কাজ ও অতিরিক্ত ঘুম থেকে নিজেকে দূরে রাখা রমাদানের আদব। সঠিক পরিকল্পনার মাধ্যমে আমরা অল্প সময়েও বেশি ইবাদত ও ভালো কাজ করতে পারি, যা আমাদের আখিরাতের পাথেয় হয়ে ওঠে।"
+  },
+  {
+    "id": "ramadan-004",
+    "title": "রমাদান ও কুরআনের সম্পর্ক",
+    "heading": "কুরআন কেন রমাদানের সাথে গভীরভাবে জড়িত",
+    "author": "Sadat Hassan Labib",
+    "published_date": "2026-03-10",
+    "photo_url": "https://example.com/images/quran-ramadan.jpg",
+    "category": "Quran & Ramadan",
+    "how_many_time_to_read": "5 minutes",
+    "content": "রমাদান হলো কুরআন নাজিলের মাস। এই মাসে কুরআনের সাথে সম্পর্ক গড়ে তোলার বিশেষ গুরুত্ব রয়েছে। তিলাওয়াত, অর্থ অনুধাবন এবং কুরআনের শিক্ষা অনুযায়ী জীবন গঠনের সুযোগ এনে দেয় রমাদান। রাসূল ﷺ রমাদানে কুরআন বেশি বেশি পড়তেন। তাই আমাদেরও উচিত এই মাসে কুরআনের জন্য আলাদা সময় নির্ধারণ করা। কুরআনের আলো আমাদের হৃদয়কে নরম করে এবং সঠিক পথে চলার শক্তি জোগায়।"
+  },
+  {
+    "id": "ramadan-005",
+    "title": "রমাদানের শেষ দশক",
+    "heading": "লাইলাতুল কদর ও আমাদের করণীয়",
+    "author": "Sadat Hassan Labib",
+    "published_date": "2026-03-20",
+    "photo_url": "https://example.com/images/last-ten-nights.jpg",
+    "category": "Ramadan Special",
+    "how_many_time_to_read": "7 minutes",
+    "content": "রমাদানের শেষ দশক অত্যন্ত ফজিলতপূর্ণ। এই সময়েই রয়েছে লাইলাতুল কদর, যা হাজার মাসের চেয়েও উত্তম। এই দশকে বেশি বেশি নামাজ, দোয়া, ইস্তিগফার ও কুরআন তিলাওয়াত করা উচিত। দুনিয়াবি ব্যস্ততা কমিয়ে আল্লাহর দিকে ফিরে আসাই এই সময়ের মূল শিক্ষা। যারা এই রাতের মর্যাদা উপলব্ধি করে ইবাদতে কাটায়, তাদের জন্য রয়েছে অপরিসীম সওয়াব ও আল্লাহর বিশেষ রহমত।"
+  }
+];
+const singleData= data.find((d)=>d.id==id);
+if(singleData){
+   return (
+    <div className='border p-5 my-5 rounded-lg shadow-lg'>
+        <h1>blog detais data</h1>
+        <p>id :{id}</p>
+        <p>title: {singleData?.title}</p>
+        <p>heading: {singleData?.heading}</p>
+        <br />
+        <p>{singleData.content}</p>
+    </div>
+   )
+
+}
+else{
+  return <h2 className='text-center mt-10'>Blog not found</h2>
+}
+ 
+  
+}
+
+export default BlogDetais
