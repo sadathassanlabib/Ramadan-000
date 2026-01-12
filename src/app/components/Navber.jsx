@@ -16,7 +16,8 @@ const Navber = () => {
             <Link href="/event"><li>Event</li></Link>
             <Link href="/about"><li>About</li></Link> 
             <Link href="/login"><li>Login</li></Link>     
-            <Link href="/register"><li>Register</li></Link>         
+            <Link href="/register"><li>Register</li></Link> 
+                    
           </ul>
         </nav>
   )
