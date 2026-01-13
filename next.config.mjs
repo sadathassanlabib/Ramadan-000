@@ -9,6 +9,16 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/resource/pdf/add',
+        destination: '/admin-dashboard/resource/pdf/add',
+        permanent: true,
+      },
+  
+    ];
+  }
 };
 
 export default nextConfig;

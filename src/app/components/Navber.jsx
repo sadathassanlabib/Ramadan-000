@@ -8,7 +8,8 @@ const Navber = () => {
   const pathname = usePathname()
   if (!pathname.includes('dashboard')){
     return (
-     <nav>
+     <nav className="flex flex-row justify-between items-center p-5 bg-gray-900 text-yellow-100">  
+          <p>জীবনদীপ্ত <br />রমাদান</p>
           <ul className="flex flex-row space-x-5 justify-end mx-10 mt-5">
             <Link href="/"><li>Home</li></Link>
             <Link href="/resource"><li>Resource</li></Link>

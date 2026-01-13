@@ -1,25 +1,34 @@
-import dbConnect from "@/lib/dbConnect"
+import dbConnect from "@/lib/dbConnect";
 import { ObjectId } from "mongodb";
 
-
 export async function GET(request, { params }) {
-  const  p  = await params; // ⭐ MUST
-  const singleData =await dbConnect('blogs').findOne({_id:new ObjectId(p.id)})
-  return Response.json({singleData});
+  const { id } = params; // safer
+  const collection = await dbConnect("blogs");
+  const singleData = await collection.findOne({ _id: new ObjectId(id) });
+  return new Response(JSON.stringify({ success: true, data: singleData }), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
 }
 
 export async function DELETE(request, { params }) {
-  const  p  = await params; // ⭐ MUST
-  const response =await dbConnect('blogs').deleteOne({_id:new ObjectId(p.id)})
-  return Response.json({response});
+  const { id } = params;
+  const collection = await dbConnect("blogs");
+  const response = await collection.deleteOne({ _id: new ObjectId(id) });
+  return new Response(JSON.stringify({ success: true, data: response }), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
 }
 
 export async function PATCH(request, { params }) {
-  const  p  = await params; 
- const postedData = await request.json();
- const filter = { _id: new ObjectId(p.id) };
-  const UpdatedResponse =await dbConnect('blogs').updateOne(filter,{$set:{...postedData}} , { upsert: true })
-  return Response.json({UpdatedResponse});
+  const { id } = params;
+  const postedData = await request.json();
+  const collection = await dbConnect("blogs");
+  const filter = { _id: new ObjectId(id) };
+  const UpdatedResponse = await collection.updateOne(filter, { $set: { ...postedData } }, { upsert: true });
+  return new Response(JSON.stringify({ success: true, data: UpdatedResponse }), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
 }
-
-

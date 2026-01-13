@@ -6,7 +6,7 @@ import PdfAddPage from './components/PdfAddPage'
 const AddPage = () => {
   return (
     <main>
-  <PdfAddPage/>
+     <PdfAddPage/>
   </main>
   )
 }

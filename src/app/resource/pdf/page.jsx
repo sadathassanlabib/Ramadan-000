@@ -1,22 +1,32 @@
-import Link from 'next/link'
-import React from 'react'
+import { getResource } from '@/app/actions/resource/getResource';
+import Link from 'next/link';
+import { redirect } from 'next/navigation';
+import React from 'react';
+import { cookies } from 'next/headers';
+
+export const dynamic = 'force-dynamic';
 
 const PDF = async () => {
-  const res =await fetch('http://localhost:3000/api/items');
+  // Admin check
+ 
+  // Fetch PDFs
+  const result = await getResource();
+  if(!result.success) {
+    return <p>Error loading PDFs: {result.message}</p>;
+  }
+  const data = result.data;
 
-  const result = await res.json();
-  const items = result.data;
   return (
-   <main className='m-10'>
-    <h1>PDF Page</h1>
-    <div>
-      {items?.map((singlePDF)=>{return <p key={singlePDF._id}>{singlePDF.title}</p>})}
-    </div>
-    
-    <Link href="/resource/pdf/add">Add PDF</Link>
-   </main>
+    <main className='m-10'>
+      <h1>PDF Page</h1>
+      <div>
+        {data?.map((singlePDF) => (
+          <p key={singlePDF._id.toString()}>{singlePDF.title}</p>
+        ))}
+      </div>
+      <Link href="/resource/pdf/add">Add PDF</Link>
+    </main>
+  );
+};
 
-  )
-}
-
-export default PDF
+export default PDF;
