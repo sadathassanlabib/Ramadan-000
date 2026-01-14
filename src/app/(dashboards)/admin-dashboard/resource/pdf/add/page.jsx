@@ -1,5 +1,5 @@
 
-import PdfAddPage from './components/PdfAddPage'
+import PdfAddPage from './components/PdfAdd'
 
 
 

@@ -1,6 +1,6 @@
 'use client'
 
-import {  postSingle } from "@/app/actions/resource/postSingle";
+import { postSingleResource } from "@/app/actions/resource/resource.action";
 import { useRouter } from "next/navigation";
 
 const PdfAddPage = () => {
@@ -13,7 +13,7 @@ const router =useRouter()
         const payload = { title: pdfTitle };
         // const res = await fetch('/api/items',{method:'POST',body:JSON.stringify(payload),headers:{'Content-Type':'application/json'}})
         // const result = await res.json();
-        const result = await postSingle(payload);
+        const result = await postSingleResource("pdf", payload);
         form.reset();
         // alert('PDF added successfully')
         router.push('/resource/pdf')

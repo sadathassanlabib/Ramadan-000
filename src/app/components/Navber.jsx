@@ -10,14 +10,15 @@ const Navber = () => {
     return (
      <nav className="flex flex-row justify-between items-center p-5 bg-gray-900 text-yellow-100">  
           <p>জীবনদীপ্ত <br />রমাদান</p>
-          <ul className="flex flex-row space-x-5 justify-end mx-10 mt-5">
+          <ul className="grid grid-cols-3 gap-6 gap-x-10 gap-y-4 mx-10 mt-5 ">
             <Link href="/"><li>Home</li></Link>
             <Link href="/resource"><li>Resource</li></Link>
             <Link href="/blogs"><li>Blogs</li></Link>
             <Link href="/event"><li>Event</li></Link>
+           
             <Link href="/about"><li>About</li></Link> 
             <Link href="/login"><li>Login</li></Link>     
-            <Link href="/register"><li>Register</li></Link> 
+             <Link href="/register"><li>Register</li></Link> 
                     
           </ul>
         </nav>

@@ -1,16 +1,13 @@
-import { getResource } from '@/app/actions/resource/getResource';
+
+import { getResources } from '@/app/actions/resource/resource.action';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+
 import React from 'react';
-import { cookies } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 
 const PDF = async () => {
-  // Admin check
- 
-  // Fetch PDFs
-  const result = await getResource();
+  const result = await getResources("pdf");
   if(!result.success) {
     return <p>Error loading PDFs: {result.message}</p>;
   }

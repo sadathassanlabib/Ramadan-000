@@ -1,11 +1,15 @@
+
 import { getResources } from '@/app/actions/resource/resource.action';
 import Link from 'next/link';
-import React from 'react'
 
-const Muhasaba = async() => {
-  const result = await getResources("muhasaba");
+import React from 'react';
+
+export const dynamic = 'force-dynamic';
+
+const Book = async () => {
+  const result = await getResources("book");
   if(!result.success) {
-    return <p>Error loading PDFs: {result.message}</p>;
+    return <p>Error loading Books: {result.message}</p>;
   }
   const data = result.data;
 
@@ -17,9 +21,9 @@ const Muhasaba = async() => {
           <p key={singlePDF._id.toString()}>{singlePDF.title}</p>
         ))}
       </div>
-      <Link href="/resource/muhasaba/add">Add PDF</Link>
+      <Link href="/resource/book/add">Add Book</Link>
     </main>
   );
-}
+};
 
-export default Muhasaba
+export default Book;
