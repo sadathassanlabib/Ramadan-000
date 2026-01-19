@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navber from "./components/Navber";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,22 +28,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
        <Navber></Navber>
-        <main className="h-screen h-max-[500px]"> 
+        <div className="pt-20">
           {children}
-        </main>
+        </div>
        
-        {/* <footer className="mt-20 border-t border-gray-200 py-6 text-center text-sm text-gray-600">
-      <p>
-        © {new Date().getFullYear()} — Crafted with care by{' '}
-        <span className="font-semibold text-gray-200">
-          Sadat Hassan Labib
-        </span>
-      </p>
-
-      <p className="mt-1 text-xs text-gray-200">
-        All rights reserved.
-      </p>
-    </footer> */}
+       <Footer/>
       </body>
     </html>
   );

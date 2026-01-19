@@ -1,4 +1,4 @@
-import dbConnect from "@/lib/dbConnect"
+import { getCollection } from "@/lib/dbConnect"
 import { ObjectId } from "mongodb"
 
 export async function GET(req, { params }) {
@@ -12,7 +12,7 @@ export async function GET(req, { params }) {
       )
     }
 
-    const col = await dbConnect(collection)
+    const col = await getCollectiont(collection)
     const data = await col.findOne({ _id: new ObjectId(id) })
 
     return Response.json({ success: true, data })
@@ -29,7 +29,7 @@ export async function PATCH(req, { params }) {
     const { collection, id } = await params
     const body = await req.json()
 
-    const col = await dbConnect(collection)
+    const col = await getCollection(collection)
     const result = await col.updateOne(
       { _id: new ObjectId(id) },
       { $set: body }
@@ -48,7 +48,7 @@ export async function DELETE(req, { params }) {
   try {
     const { collection, id } = await params
 
-    const col = await dbConnect(collection)
+    const col = await getCollection(collection)
     const result = await col.deleteOne({ _id: new ObjectId(id) })
 
     return Response.json({ success: true, data: result })

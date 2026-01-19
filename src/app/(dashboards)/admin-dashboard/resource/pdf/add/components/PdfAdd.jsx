@@ -10,20 +10,21 @@ const router =useRouter()
         e.preventDefault();
         const form = e.target.form;
         const pdfTitle = form.pdfTitle.value;
-        const payload = { title: pdfTitle };
-        // const res = await fetch('/api/items',{method:'POST',body:JSON.stringify(payload),headers:{'Content-Type':'application/json'}})
-        // const result = await res.json();
+        const pdfLink = form.pdfLink.value;
+        const payload = {  pdfTitle,  pdfLink };
+       
         const result = await postSingleResource("pdf", payload);
         form.reset();
-        // alert('PDF added successfully')
+        alert('PDF added successfully')
         router.push('/resource/pdf')
         router.refresh()
     }
   return (
     <main className="m-10">
-        <form action="">
-            <input type="text" name="pdfTitle" id="" placeholder="pdf title" />
-            <button type="submit" value="" onClick={handleSubmit} >Submit</button>
+        <form action="" className="  gap-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <input type="text" name="pdfTitle" id="" placeholder="pdf title" className="p-5  bg-amber-700 rounded" />
+            <input type="text" name="pdfLink" id="" placeholder="pdf link" className="p-5  bg-amber-700 rounded" />
+            <button type="submit" value="" onClick={handleSubmit} className=" bg-blue-600 border-2 rounded-2xl p-4">Submit</button>
         </form>
     </main>
   )

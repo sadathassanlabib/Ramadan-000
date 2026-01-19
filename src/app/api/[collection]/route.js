@@ -1,10 +1,10 @@
-import dbConnect from "@/lib/dbConnect"
+import { getCollection } from "@/lib/dbConnect"
 import { revalidatePath } from "next/cache"
 
 export async function GET(req, { params }) {
   try {
     const { collection } = await params
-    const col = await dbConnect(collection)
+    const col = await getCollection(collection)
     const data = await col.find({}).toArray()
 
     return Response.json({ success: true, data })
@@ -21,7 +21,7 @@ export async function POST(req, { params }) {
     const { collection } = await params
     const body = await req.json()
 
-    const col = await dbConnect(collection)
+    const col = await getCollection(collection)
     const result = await col.insertOne(body)
 
     revalidatePath(`/resource/${collection}`)

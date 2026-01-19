@@ -10,21 +10,23 @@ const CourseAdd = () => {
       const handleSubmit = async(e) => {
           e.preventDefault();
           const form = e.target.form;
-          const pdfTitle = form.pdfTitle.value;
-          const payload = { title: pdfTitle };
+          const courseTitle = form.courseTitle.value;
+          const courseLink = form.courseLink.value;
+          const payload = { title: courseTitle, link: courseLink };
           // const res = await fetch('/api/items',{method:'POST',body:JSON.stringify(payload),headers:{'Content-Type':'application/json'}})
           // const result = await res.json();
           const result = await postSingleResource("course", payload);
           form.reset();
-          // alert('PDF added successfully')
+          alert('course added successfully')
           router.push('/resource/course')
           router.refresh()
       }
     return (
       <main className="m-10">
-          <form action="">
-              <input type="text" name="pdfTitle" id="" placeholder="course title" />
-              <button type="submit" value="" onClick={handleSubmit} >Submit</button>
+          <form action="" className="  gap-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <input type="text" name="courseTitle" id="" placeholder="course title" className="p-5  bg-amber-700 rounded" />
+              <input type="text" name="courseLink" id="" placeholder="course link" className="p-5  bg-amber-700 rounded" />
+              <button type="submit" value="" onClick={handleSubmit} className="bg-blue-600 border-2 rounded-2xl p-4">Submit</button>
           </form>
       </main>
     )

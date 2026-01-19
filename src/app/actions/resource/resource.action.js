@@ -1,6 +1,6 @@
 'use server'
 
-import dbConnect from "@/lib/dbConnect"
+import { getCollection } from "@/lib/dbConnect"
 import { revalidatePath } from "next/cache"
 
 // GET all data
@@ -18,7 +18,7 @@ export const getResources = async (resourceName) => {
   }
 
   try {
-    const collection = await dbConnect(resourceName)
+    const collection = await getCollection(resourceName)
     const data = await collection.find({}).toArray()
     return { success: true, data }
   } catch (error) {
@@ -46,7 +46,7 @@ export const postSingleResource = async (
   }
 
   try {
-    const collection = await dbConnect(resourceName)
+    const collection = await getCollection(resourceName)
     const result = await collection.insertOne(postedData)
 
     if (revalidate) {
