@@ -19,12 +19,17 @@ const BlogDetais = async ({ params }) => {
   }
 
   return (
-    <main className="min-h-screen px-4 py-12
-      bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white overflow-hidden">
+    <main className="relative overflow-x-hidden min-h-screen px-4 py-12
+bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white">
 
       {/* soft background glow */}
-      <div className="absolute -top-32 -right-32 w-96 h-96 bg-slate-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 -left-32 w-96 h-96 bg-slate-600/20 rounded-full blur-3xl"></div>
+      {/* Top glow */}
+<div className="absolute -top-24 right-1/2 translate-x-1/2
+w-72 h-72 md:w-96 md:h-96 bg-slate-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+{/* Bottom glow */}
+<div className="absolute bottom-0 left-1/2 -translate-x-1/2
+w-72 h-72 md:w-96 md:h-96 bg-slate-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto
         bg-white/5 backdrop-blur-md border border-white/10

@@ -49,14 +49,14 @@ const PDF = async () => {
       </div>
 
       {/* Add PDF Button */}
-      <div className="relative z-10 mt-10 text-center">
+      {/* <div className="relative z-10 mt-10 text-center">
         <Link
           href="/resource/pdf/add"
           className="inline-block bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-full hover:opacity-90 transition"
         >
           PDF যোগ করুন
         </Link>
-      </div>
+      </div> */}
 
     </main>
   );

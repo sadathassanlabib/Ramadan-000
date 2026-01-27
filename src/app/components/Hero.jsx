@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white overflow-hidden">
@@ -26,13 +28,13 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-6 py-3 rounded-xl bg-slate-200 text-slate-900 hover:bg-white transition font-medium">
+          <Link href='/resource' className="px-6 py-3 rounded-xl bg-slate-200 text-slate-900 hover:bg-white transition font-medium">
             ইবাদতে অগ্রসর হোন
-          </button>
+          </Link>
 
-          <button className="px-6 py-3 rounded-xl border border-white/30 hover:bg-white/10 transition">
+          {/* <button className="px-6 py-3 rounded-xl border border-white/30 hover:bg-white/10 transition">
             কুরআন ও দোয়া দেখুন
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

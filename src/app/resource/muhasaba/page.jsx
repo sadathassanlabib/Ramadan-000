@@ -53,14 +53,14 @@ const Muhasaba = async () => {
       </div>
 
       {/* Add Muhasaba Button */}
-      <div className="relative z-10 mt-10 text-center">
+      {/* <div className="relative z-10 mt-10 text-center">
         <Link
           href="/resource/muhasaba/add"
           className="inline-block bg-gradient-to-r from-yellow-500 to-amber-500 text-white px-6 py-3 rounded-full hover:opacity-90 transition"
         >
           মুহাসাবা যোগ করুন
         </Link>
-      </div>
+      </div> */}
     </main>
   );
 };

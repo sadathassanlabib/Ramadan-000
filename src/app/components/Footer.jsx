@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
+        {/* <div>
           <h3 className="text-lg font-semibold text-white mb-2">লিঙ্কসমূহ</h3>
           <ul className="space-y-1">
             <li><Link href="/" className="hover:text-yellow-200 transition">হোম</Link></li>
@@ -30,7 +30,7 @@ const Footer = () => {
             <li><Link href="/event" className="hover:text-yellow-200 transition">ইভেন্ট</Link></li>
             <li><Link href="/about" className="hover:text-yellow-200 transition">আমাদের সম্পর্কে</Link></li>
           </ul>
-        </div>
+        </div> */}
 
       </div>
 

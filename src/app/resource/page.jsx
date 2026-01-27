@@ -3,7 +3,7 @@
 import Link from 'next/link';
 
 const resources = [
-  { title: 'বয়ান', desc: 'ইসলাহী ও তাযকিরামূলক আলোচনা', href: '/resource/boyan' },
+  { title: 'বয়ান', desc: 'ইসলাহী ও তাযকিয়ামূলক আলোচনা', href: '/resource/boyan' },
   { title: 'বই', desc: 'ইসলামি বই ও পাঠ্যসম্ভার', href: '/resource/book' },
   { title: 'PDF', desc: 'সংরক্ষিত নোট ও পাঠযোগ্য ফাইল', href: '/resource/pdf' },
   { title: 'মুহাসাবা', desc: 'নিজেকে যাচাই ও আত্মসমালোচনা', href: '/resource/muhasaba' },
